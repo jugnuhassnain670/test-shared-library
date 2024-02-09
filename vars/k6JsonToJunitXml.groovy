@@ -14,9 +14,9 @@ def call(String inputFilePath, String outputFilePath){
 
 @NonCPS
 def process(String inputFilePath, String outputFilePath) {
-    def htmlContent = readFile(inputFilePath)
-    echo "Inside pocess function....... Contents of ${inputFilePath}:"
-    echo htmlContent
+    // def htmlContent = readFile(inputFilePath)
+    // echo "Inside pocess function....... Contents of ${inputFilePath}:"
+    // echo htmlContent
     int totalTestsCount = 0, totalPassesCount = 0,    totalFailuresCount = 0
 
     def jsonSlurper = new JsonSlurper()
