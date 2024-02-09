@@ -24,6 +24,7 @@ def process(String inputFilePath, String outputFilePath) {
 
     new File(inputFilePath).eachLine { line ->
         // Read input file line by line
+        echo "Inside pocess function....... Contents of ${inputFilePath}:"
         def jsondata = jsonSlurper.parse(line.toCharArray());
         if (jsondata.metric == "checks" && jsondata.data.tags) {
             
