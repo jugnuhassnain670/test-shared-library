@@ -5,15 +5,17 @@ import groovy.transform.TupleConstructor
 
 def call(String inputFilePath, String outputFilePath){
     def htmlContent = readFile(inputFilePath)
-    echo "Contents of ${inputFilePath}:"
+    echo "pre call function ....... Contents of ${inputFilePath}:"
     echo htmlContent
+    echo "post call function ....... Contents of ${inputFilePath}:"
     process(inputFilePath, outputFilePath)
+    echo "post call after process call function ....... Contents of ${inputFilePath}:"
 }
 
 @NonCPS
 def process(String inputFilePath, String outputFilePath) {
     def htmlContent = readFile(inputFilePath)
-    echo "Contents of ${inputFilePath}:"
+    echo "Inside pocess function....... Contents of ${inputFilePath}:"
     echo htmlContent
     int totalTestsCount = 0, totalPassesCount = 0,    totalFailuresCount = 0
 
