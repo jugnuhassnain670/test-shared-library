@@ -4,12 +4,17 @@ import groovy.transform.TupleConstructor
 
 
 def call(String inputFilePath, String outputFilePath){
+    def htmlContent = readFile(inputFilePath)
+    echo "Contents of ${inputFilePath}:"
+    echo htmlContent
     process(inputFilePath, outputFilePath)
 }
 
 @NonCPS
 def process(String inputFilePath, String outputFilePath) {
-    
+    def htmlContent = readFile(inputFilePath)
+    echo "Contents of ${inputFilePath}:"
+    echo htmlContent
     int totalTestsCount = 0, totalPassesCount = 0,    totalFailuresCount = 0
 
     def jsonSlurper = new JsonSlurper()
